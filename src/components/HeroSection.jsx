@@ -10,11 +10,11 @@ const HeroSection = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 bg-clip-text text-transparent">
-          MEME REVOLUTION
+        <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-yellow-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+          Royal Master
         </h1>
         <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-          Join the viral movement reshaping decentralized finance. Secure your tokens now and ride the meme wave to the moon!
+          El memecoin definitivo que combina el humor real con las finanzas descentralizadas
         </p>
       </motion.div>
 
@@ -27,29 +27,25 @@ const HeroSection = () => {
             <span className="text-gray-400">Holders</span>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-pink-400">
-              $<CountUp end={50} duration={3} />M
+            <div className="text-4xl font-bold text-purple-400">
+              $<CountUp end={0.0005} duration={3} decimals={4} />
             </div>
-            <span className="text-gray-400">Liquidity</span>
+            <span className="text-gray-400">Precio Actual</span>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-purple-400">
+            <div className="text-4xl font-bold text-pink-400">
               <CountUp end={24} duration={3} />h
             </div>
-            <span className="text-gray-400">Launch</span>
+            <span className="text-gray-400">Trending</span>
           </div>
         </div>
 
         <div className="relative pt-4">
           <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
             <div 
-              className="h-full bg-gradient-to-r from-yellow-500 to-pink-500 animate-progress"
+              className="h-full bg-gradient-to-r from-purple-500 to-pink-500 animate-progress"
               style={{ width: '75%' }}
             />
-          </div>
-          <div className="flex justify-between text-sm text-gray-400 mt-2">
-            <span>75% Sold</span>
-            <span>1,000,000 MEME</span>
           </div>
         </div>
       </div>
