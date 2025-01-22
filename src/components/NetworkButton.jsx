@@ -1,32 +1,30 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const NetworkButton = ({ network, selected, onClick }) => {
-  const getNetworkIcon = (name) => {
-    switch(name) {
-      case 'TRC20': return '/tron-icon.svg';
-      case 'BEP20': return '/binance-icon.svg';
-      case 'Polygon': return '/polygon-icon.svg';
-      default: return '';
-    }
-  };
-
   return (
-    <button
+    <motion.button
       onClick={onClick}
-      className={`p-4 rounded-xl flex flex-col items-center justify-center transition-all duration-300 ${
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className={`p-6 rounded-2xl flex flex-col items-center justify-center transition-all duration-300 ${
         selected 
-          ? 'bg-gradient-to-br from-yellow-400 to-orange-500 scale-105 shadow-glow'
-          : 'bg-gray-800 hover:bg-gray-700'
+          ? 'bg-gradient-to-br from-yellow-400 to-orange-500 shadow-lg shadow-yellow-500/30'
+          : 'bg-gray-800/50 backdrop-blur-sm hover:bg-gray-700/70 border border-gray-700/30'
       }`}
     >
-      <img 
-        src={getNetworkIcon(network.name)} 
-        alt={network.name} 
-        className="w-12 h-12 mb-2 object-contain"
-      />
-      <span className="font-semibold">{network.name}</span>
+      <div className={`w-16 h-16 mb-4 flex items-center justify-center rounded-xl ${
+        selected ? 'bg-black/20' : 'bg-gray-700/30'
+      }`}>
+        <span className="text-3xl">
+          {network.name === 'TRC20' ? '🌐' : 
+           network.name === 'BEP20' ? '⚡' : 
+           '🔷'}
+        </span>
+      </div>
+      <span className="font-semibold text-lg">{network.name}</span>
       <span className="text-sm text-gray-300 mt-1">{network.currency}</span>
-    </button>
+    </motion.button>
   );
 };
 

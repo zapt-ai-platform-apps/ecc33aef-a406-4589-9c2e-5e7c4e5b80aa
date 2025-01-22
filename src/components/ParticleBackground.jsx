@@ -13,29 +13,42 @@ const ParticleBackground = () => {
       init={particlesInit}
       options={{
         particles: {
-          number: { value: 50, density: { enable: true, value_area: 800 } },
+          number: { value: 80 },
           color: { value: "#ffffff" },
-          shape: { type: "circle" },
           opacity: { value: 0.5 },
-          size: { value: 3, random: true },
+          size: { value: { min: 1, max: 3 } },
           move: {
             enable: true,
-            speed: 1,
+            speed: 0.5,
             direction: "none",
-            random: false,
-            straight: false,
-            out_mode: "out",
-            bounce: false,
+            outModes: "out",
+            trail: {
+              enable: true,
+              length: 10,
+              fillColor: "#000000"
+            }
+          },
+          links: {
+            enable: true,
+            distance: 150,
+            color: "#ffffff",
+            opacity: 0.2,
+            width: 1
+          },
+          shape: {
+            type: "circle"
           }
         },
         interactivity: {
           events: {
-            onhover: { enable: true, mode: "repulse" }
+            onHover: {
+              enable: true,
+              mode: "repulse"
+            }
           }
-        },
-        retina_detect: true
+        }
       }}
-      className="absolute inset-0 -z-10"
+      className="absolute inset-0 -z-10 opacity-20"
     />
   );
 };
